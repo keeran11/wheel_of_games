@@ -1,0 +1,60 @@
+.wheel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-top: 50px solid #ff4444;
+  z-index: 10;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  animation: pointerPulse 2s ease-in-out infinite;
+}
+
+@keyframes pointerPulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1);
+    filter: drop-shadow(0 6px 12px rgba(255, 68, 68, 0.6));
+  }
+}
+
+.wheel-pointer::after {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background: #ff4444;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.wheel-canvas {
+  cursor: pointer;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: transform 0.1s;
+}
+
+.wheel-canvas:hover:not(.spinning) {
+  transform: scale(1.02);
+}
+
+.wheel-canvas.spinning {
+  cursor: not-allowed;
+}

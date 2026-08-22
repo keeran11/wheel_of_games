@@ -1,0 +1,207 @@
+.settings-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.settings-toggle {
+  padding: 12px 24px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
+}
+
+.settings-toggle:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.settings-panel {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 320px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.settings-panel h3 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.settings-panel h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.setting-group {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.setting-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.setting-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setting-group label > span {
+  font-weight: bold;
+  color: #333;
+}
+
+.duration-control {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.duration-control input[type="range"] {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #ddd;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.duration-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.duration-control input[type="range"]::-webkit-slider-thumb:hover {
+  background: #1d4ed8;
+  transform: scale(1.2);
+}
+
+.duration-control input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2563eb;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.duration-control input[type="range"]::-moz-range-thumb:hover {
+  background: #1d4ed8;
+  transform: scale(1.2);
+}
+
+.duration-value {
+  min-width: 40px;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.checkbox-label {
+  flex-direction: row !important;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  accent-color: #2563eb;
+}
+
+.data-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-export,
+.btn-import {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-export {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-export:hover {
+  background: #1d4ed8;
+}
+
+.btn-import {
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.btn-import:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* Dark mode styles */
+body.dark-mode .settings-panel {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body.dark-mode .settings-panel h3,
+body.dark-mode .settings-panel h4,
+body.dark-mode .setting-group label > span {
+  color: #fff;
+}
+
+body.dark-mode .setting-group {
+  border-bottom-color: #444;
+}
+
+body.dark-mode .duration-control input[type="range"] {
+  background: #444;
+}

@@ -1,0 +1,234 @@
+.sponsor-banner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 30px auto 20px;
+  padding: 0 20px;
+}
+
+.sponsor-content {
+  position: relative;
+  background: #2563eb;
+  border-radius: 16px;
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sponsor-content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sponsor-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.sponsor-marquee {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.sponsor-marquee::before,
+.sponsor-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 56px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sponsor-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #2563eb 0%, rgba(37, 99, 235, 0) 100%);
+}
+
+.sponsor-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #2563eb 0%, rgba(37, 99, 235, 0) 100%);
+}
+
+.sponsor-track {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  width: max-content;
+  animation: sponsor-marquee-scroll 26s linear infinite;
+}
+
+.sponsor-card {
+  display: flex;
+  width: 220px;
+  min-height: 202px;
+}
+
+.sponsor-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 100%;
+  padding: 16px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+}
+
+.sponsor-logo--compact,
+.sponsor-logo--empty,
+.logo-placeholder {
+  width: 132px;
+  height: 132px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  padding: 4px;
+}
+
+.sponsor-logo--empty {
+  flex-shrink: 0;
+}
+
+.sponsor-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 4px;
+}
+
+.logo-text {
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
+
+.sponsor-details {
+  flex: 1;
+  min-width: 160px;
+}
+
+.sponsor-name {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  line-height: 1.3;
+}
+
+.sponsor-name--compact {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.25;
+  text-align: center;
+  max-width: 100%;
+}
+
+.sponsor-card__link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+.sponsor-tagline {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+.sponsor-link {
+  padding: 10px 24px;
+  background: white;
+  color: #2563eb;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.sponsor-link:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.sponsor-item--empty {
+  opacity: 0.9;
+}
+
+@keyframes sponsor-marquee-scroll {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Dark mode */
+body.dark-mode .sponsor-content {
+  background: #1e40af;
+}
+
+body.dark-mode .sponsor-link {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sponsor-content {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .sponsor-marquee::before,
+  .sponsor-marquee::after {
+    width: 28px;
+  }
+
+  .sponsor-track {
+    animation-duration: 18s;
+  }
+
+  .sponsor-label {
+    width: 100%;
+  }
+
+  .sponsor-card {
+    width: 188px;
+    min-height: 168px;
+  }
+
+  .sponsor-logo,
+  .sponsor-logo--compact,
+  .sponsor-logo--empty {
+    margin: 0 auto;
+  }
+
+  .sponsor-image {
+    padding: 4px;
+  }
+}
